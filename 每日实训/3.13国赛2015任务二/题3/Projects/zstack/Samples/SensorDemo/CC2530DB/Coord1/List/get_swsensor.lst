@@ -1,0 +1,249 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Mar/2017  10:37:43 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\sensor_drv\get_swsensor.c      #
+#    Command line       =  -f F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2 #
+#                          530DB\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x8888                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\sensor_drv\get_swsensor.c -D   #
+#                          ZIGBEEPRO -D HOLD_AUTO_START -D BUILD_ALL_DEVICES  #
+#                          -D REFLECTOR -D NV_INIT -D NV_RESTORE -D ZTOOL_P1  #
+#                          -D xMT_TASK -D DEVICE_LOGICAL_TYPE=0 -D            #
+#                          LOG_TYPE=0 -D xLCD_SUPPORTED -D xMT_TASK -lC       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Coord1\List\ -lA      #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Coord1\List\          #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Coord1\Obj\ -e        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\ -I                #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\SOURCE\ -I         #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\MYAPP\ -I          #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\sensor_drv\ -I     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\ZMAIN\TI2530 #
+#                          DB\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects #
+#                          \zstack\Samples\SensorDemo\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\MT\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\HAL\TARGET\CC2530EB\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\OSAL\MCU\CCSOC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I      #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\AF\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\STACK\NWK\ -I               #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SEC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\SAPI\ -I             #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SYS\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\ZDO\ -I              #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\ZMAC\F8W\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\ZMAC\ -I                    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\SERVICES\SADDR\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\INCLUDE\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶ #
+#                          þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Coord1\List\get_swsen #
+#                          sor.lst                                            #
+#    Object file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Coord1\Obj\get_swsens #
+#                          or.r51                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\sensor_drv\get_swsensor.c
+      1          /**************************************************************************************************
+      2            Filename:      
+      3          
+      4            Description:     
+      5                            
+      6          **************************************************************************************************/
+      7          
+      8          /******************************************************************************
+      9           * INCLUDES
+     10           */
+     11          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     12          #include "hal_defs.h"
+     13          #include "hal_types.h"
+     14          #include "get_swsensor.h"
+     15          
+     16          
+     17          /******************************************************************************
+     18           * GLOBAL VARIABLES
+     19           */
+     20          
+     21          /******************************************************************************
+     22           * Ãû³Æ       get_swsensor
+     23           * ¹¦ÄÜ       ¶ÁÈ¡¿ª¹ØÁ¿Öµ
+     24           * Èë¿Ú²ÎÊý   ÎÞ
+     25           * ³ö¿Ú²ÎÊý   0»ò1µçÆ½
+     26           *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     27          uint8 get_swsensor(void)
+   \                     get_swsensor:
+     28          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     29              P0SEL &= ~( 1 <<1);  //ÉèÖÃp0.1ÎªÆÕÍ¨i/o¿Ú
+   \   000000   53F3FD       ANL     0xf3,#0xfd
+     30              P0DIR &= ~( 1 <<1);  //ÉèÖÃp0.1ÎªÊäÈë¿Ú
+   \   000003   53FDFD       ANL     0xfd,#0xfd
+     31              return P0_1;         //·µ»Øp0.1µçÆ½
+   \   000006   A281         MOV     C,0x80.1
+   \   000008   E4           CLR     A
+   \   000009   33           RLC     A
+   \   00000A   F9           MOV     R1,A
+   \   00000B   02....       LJMP    ?BRET
+   \   00000E                REQUIRE P0SEL
+   \   00000E                REQUIRE P0DIR
+   \   00000E                REQUIRE _A_P0
+     32          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_swsensor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_swsensor
+     33          
+     34          
+     35          
+     36          
+     37          
+     38          
+     39          
+     40          
+     41          
+     42          
+     43          
+     44          
+     45          
+     46          
+     47          
+     48          
+     49          
+     50          
+     51          
+     52          
+     53          
+     54          
+     55          
+     56          
+     57          
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     get_swsensor     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     _A_P0                   1
+     P0SEL                   1
+     P0DIR                   1
+     get_swsensor           14
+     ??get_swsensor?relay    6
+
+ 
+ 14 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  3 bytes in segment SFR_AN
+ 
+ 20 bytes of CODE memory
+  0 bytes of DATA memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1245 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Mar/2017  16:39:09 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\SENSOR_DRV\dma_itg.c           #
+#    Command line       =  -f F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2 #
+#                          530DB\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x8888                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\SENSOR_DRV\dma_itg.c -D        #
+#                          VER=2.3 -D ZIGBEEPRO -D NWK_AUTO_POLL -D           #
+#                          HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR  #
+#                          -D NV_INIT -D xNV_RESTORE -D ZTOOL_P1 -D MT_TASK   #
+#                          -D DEVICE_LOGICAL_TYPE=01 -D LOG_TYPE=02 -D        #
+#                          xUART_SENSOR -D xLCD_SUPPORTED -D UART_LOOK -lC    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\ -lA     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\         #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\Obj\ -e       #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\ -I                #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\SOURCE\ -I         #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\MYAPP\ -I          #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\sensor_drv\ -I     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\ZMAIN\TI2530 #
+#                          DB\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects #
+#                          \zstack\Samples\SensorDemo\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\MT\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\HAL\TARGET\CC2530EB\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\OSAL\MCU\CCSOC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I      #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\AF\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\STACK\NWK\ -I               #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SEC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\SAPI\ -I             #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SYS\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\ZDO\ -I              #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\ZMAC\F8W\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\ZMAC\ -I                    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\SERVICES\SADDR\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\INCLUDE\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶ #
+#                          þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\dma_itg. #
+#                          lst                                                #
+#    Object file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\Obj\dma_itg.r #
+#                          51                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\SENSOR_DRV\dma_itg.c
+      1          //-------------------------------------------------------------------
+      2          // Filename: dma_bma.c
+      3          // Description:  dma_bma module library (I2C)
+      4          //-------------------------------------------------------------------
+      5          //-------------------------------------------------------------------
+      6          // INCLUDES
+      7          //-------------------------------------------------------------------
+      8          /******************************************************************************
+      9           * INCLUDES
+     10           */
+     11          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     12          #include "hal_defs.h"
+     13          #include "hal_types.h"
+     14          #include "dma_itg.h"
+     15          
+     16          
+     17          
+     18          #define BM(n)      (1 << (n))
+     19          
+     20          #define MCU_IO_TRISTATE   1             
+     21          #define MCU_IO_PULLUP     2
+     22          #define MCU_IO_PULLDOWN   3
+     23          
+     24          #define MCU_IO_OUTPUT(port, pin, val)  MCU_IO_OUTPUT_PREP(port, pin, val)
+     25          #define MCU_IO_OUTPUT_PREP(port, pin, val)  st( P##port##SEL &= ~BM(pin); P##port##_##pin## = val; P##port##DIR |= BM(pin); )
+     26          #define MCU_IO_INPUT(port, pin, func)  MCU_IO_INPUT_PREP(port, pin, func)
+     27          #define MCU_IO_INPUT_PREP(port, pin, func)  st( P##port##SEL &= ~BM(pin); P##port##DIR &= ~BM(pin); switch (func) { case MCU_IO_PULLUP: P##port##INP &= ~BM(pin); P2INP &= ~BM(port + 5); break; case MCU_IO_PULLDOWN: P##port##INP &= ~BM(pin); P2INP |= BM(port + 5); break; default: P##port##INP |= BM(pin); break; } )
+     28          #define MCU_IO_GET(port, pin)          MCU_IO_GET_PREP(port, pin)
+     29          #define MCU_IO_GET_PREP(port, pin)          (P##port## & BM(pin))
+     30          
+     31          
+     32          
+     33          /***********ÐÂ°å°åIOÉèÖÃ********************/
+     34          #define HAL_BOARD_IO_SHT_SCK_PORT           1
+     35          #define HAL_BOARD_IO_SHT_SCK_PIN             6
+     36          #define HAL_BOARD_IO_SHT_SDA_PORT           1
+     37          #define HAL_BOARD_IO_SHT_SDA_PIN             5
+     38          
+     39          #define HAL_BOARD_IO_E2PROM_SCL_PORT  HAL_BOARD_IO_SHT_SCK_PORT
+     40          #define HAL_BOARD_IO_E2PROM_SCL_PIN    HAL_BOARD_IO_SHT_SCK_PIN
+     41          
+     42          
+     43          #define HAL_E2PROM_SCK_DIR_OUT()          MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SCK_PORT, HAL_BOARD_IO_SHT_SCK_PIN,0)
+     44          #define HAL_E2PROM_SCK_SET()                  MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SCK_PORT, HAL_BOARD_IO_SHT_SCK_PIN,1)
+     45          #define HAL_E2PROM_SCK_CLR()                  MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SCK_PORT, HAL_BOARD_IO_SHT_SCK_PIN,0)
+     46          #define HAL_E2PROM_SCL_DIR_OUT        HAL_E2PROM_SCK_DIR_OUT
+     47          #define HAL_E2PROM_SCL_SET                 HAL_E2PROM_SCK_SET
+     48          #define HAL_E2PROM_SCL_CLR                HAL_E2PROM_SCK_CLR
+     49          
+     50          #define HAL_E2PROM_SDA_SET()                 MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SDA_PORT, HAL_BOARD_IO_SHT_SDA_PIN,1)
+     51          #define HAL_E2PROM_SDA_CLR()                 MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SDA_PORT, HAL_BOARD_IO_SHT_SDA_PIN,0)
+     52          #define HAL_E2PROM_SDA_DIR_OUT()         MCU_IO_OUTPUT(HAL_BOARD_IO_SHT_SDA_PORT, HAL_BOARD_IO_SHT_SDA_PIN,1)
+     53          #define HAL_E2PROM_SDA_DIR_IN()           MCU_IO_INPUT(HAL_BOARD_IO_SHT_SDA_PORT, HAL_BOARD_IO_SHT_SDA_PIN,2)
+     54          #define HAL_E2PROM_SDA_VAL()                MCU_IO_GET(HAL_BOARD_IO_SHT_SDA_PORT, HAL_BOARD_IO_SHT_SDA_PIN)   
+     55          #define halMcuWaitUs  ITGMcuWaitUs
+     56          #define NOP()    asm("NOP")
+     57          //-------------------------------------------------------------------
+     58          // LOCAL FUNCTIONS
+     59          //-------------------------------------------------------------------
+     60          static void ITGMcuWaitUs(uint16 usec);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          void ITGMcuWaitUs(uint16 usec)
+   \                     ITGMcuWaitUs:
+     62          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     63              usec >>= 1;
+   \   000000   EB           MOV     A,R3
+   \   000001   C3           CLR     C
+   \   000002   13           RRC     A
+   \   000003   FB           MOV     R3,A
+   \   000004   EA           MOV     A,R2
+   \   000005   13           RRC     A
+   \   000006   FA           MOV     R2,A
+   \   000007   8010         SJMP    ??ITGMcuWaitUs_0
+     64              while (usec--)
+     65              {
+     66                  NOP();
+   \                     ??ITGMcuWaitUs_1:
+   \   000009   00           NOP
+     67                  NOP();
+   \   00000A   00           NOP
+     68                  NOP();
+   \   00000B   00           NOP
+     69                  NOP();
+   \   00000C   00           NOP
+     70                  NOP();
+   \   00000D   00           NOP
+     71                  NOP();
+   \   00000E   00           NOP
+     72                  NOP();
+   \   00000F   00           NOP
+     73                  NOP();
+   \   000010   00           NOP
+     74                  NOP();
+   \   000011   00           NOP
+     75                  NOP();
+   \   000012   00           NOP
+     76                  NOP();
+   \   000013   00           NOP
+     77                  NOP();
+   \   000014   00           NOP
+     78                  NOP();
+   \   000015   00           NOP
+     79                  NOP();
+   \   000016   00           NOP
+     80                  NOP();
+   \   000017   00           NOP
+     81                  NOP();
+   \   000018   00           NOP
+     82                  //NOP();
+     83              }
+   \                     ??ITGMcuWaitUs_0:
+   \   000019   EA           MOV     A,R2
+   \   00001A   F8           MOV     R0,A
+   \   00001B   EB           MOV     A,R3
+   \   00001C   F9           MOV     R1,A
+   \   00001D   E8           MOV     A,R0
+   \   00001E   24FF         ADD     A,#-0x1
+   \   000020   1A           DEC     R2
+   \   000021   E9           MOV     A,R1
+   \   000022   34FF         ADDC    A,#-0x1
+   \   000024   FB           MOV     R3,A
+   \   000025   E8           MOV     A,R0
+   \   000026   49           ORL     A,R1
+   \   000027   70E0         JNZ     ??ITGMcuWaitUs_1
+     84          }
+   \   000029   02....       LJMP    ?BRET
+     85          //-------------------------------------------------------------------
+     86          // LOCAL FUNCTIONS
+     87          //-------------------------------------------------------------------
+     88          //--------- write a byte and checks the ack signal----------------- 
+     89          static void M3_I2cWrite(uint8 dat);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     90          void M3_I2cWrite(uint8 dat)//ÔÚ´«ËÍÊý¾ÝÊ±£¬Êý¾ÝÏß±£³ÖÎÈ¶¨²»ÄÜÓÐÌø±ä
+   \                     M3_I2cWrite:
+     91          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+     92              uint8 i;
+     93          
+     94              for (i = 0; i < 8; i++)
+   \   000007   7E08         MOV     R6,#0x8
+     95              {
+     96                  if (dat &0x80)
+   \                     ??M3_I2cWrite_0:
+   \   000009   EF           MOV     A,R7
+   \   00000A   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00000C   53F4DF       ANL     0xf4,#0xdf
+   \   00000F   5004         JNC     ??M3_I2cWrite_1
+     97                  {
+     98                      HAL_E2PROM_SDA_SET();
+   \   000011   D295         SETB    0x90.5
+   \   000013   8002         SJMP    ??M3_I2cWrite_2
+     99                  }
+    100                  else
+    101                  {
+    102                      HAL_E2PROM_SDA_CLR();
+   \                     ??M3_I2cWrite_1:
+   \   000015   C295         CLR     0x90.5
+    103                  }
+   \                     ??M3_I2cWrite_2:
+   \   000017   12....       LCALL   ?Subroutine6 & 0xFFFF
+    104                  HAL_E2PROM_SCK_SET();//µ±Ê±ÖÓÏßÎª¸ßµçÆ½(SCL=1)Ê±¿ªÊ¼´«ËÍÊý¾Ý
+    105                  dat = dat << 1;
+   \                     ??CrossCallReturnLabel_21:
+   \   00001A   C3           CLR     C
+   \   00001B   33           RLC     A
+   \   00001C   FF           MOV     R7,A
+    106                  halMcuWaitUs(2);
+   \   00001D                ; Setup parameters for call to function ITGMcuWaitUs
+   \   00001D   12....       LCALL   ?Subroutine3 & 0xFFFF
+    107                  HAL_E2PROM_SCK_CLR();//´«ËÍÍêºóÊÍ·Å×ÜÏß£¨SCL=0£©
+    108                  halMcuWaitUs(2);
+    109              }
+   \                     ??CrossCallReturnLabel_0:
+   \   000020   1E           DEC     R6
+   \   000021   EE           MOV     A,R6
+   \   000022   70E5         JNZ     ??M3_I2cWrite_0
+    110              
+    111          }
+   \   000024   80..         SJMP    ??Subroutine15_0
+   \   000026                REQUIRE P1SEL
+   \   000026                REQUIRE _A_P1
+   \   000026                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   43FE20       ORL     0xfe,#0x20
+   \   000003                REQUIRE ??Subroutine14_0
+   \   000003                ; // Fall through to label ??Subroutine14_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine14_0:
+   \   000000   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   53F4BF       ANL     0xf4,#0xbf
+   \   000003   D296         SETB    0x90.6
+   \   000005   43FE40       ORL     0xfe,#0x40
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine15_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A02         MOV     R2,#0x2
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??ITGMcuWaitUs?relay
+   \   000007   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   00000A                ; Setup parameters for call to function ITGMcuWaitUs
+   \   00000A                ; Setup parameters for call to function ITGMcuWaitUs
+   \   00000A   7A02         MOV     R2,#0x2
+   \   00000C   7B00         MOV     R3,#0x0
+   \   00000E   12....       LCALL   ??ITGMcuWaitUs?relay
+   \   000011   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   53F4BF       ANL     0xf4,#0xbf
+   \   000003   C296         CLR     0x90.6
+   \   000005   43FE40       ORL     0xfe,#0x40
+   \   000008   22           RET
+    112          
+    113          //--------- read a byte and checks the ack signal----------------- 
+    114          static uint8 M3_I2cRead(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    115          uint8 M3_I2cRead(void)
+   \                     M3_I2cRead:
+    116          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    117              uint8 res = 0;
+   \   000005   7E00         MOV     R6,#0x0
+    118              uint8 cnt;
+    119          
+    120              HAL_E2PROM_SDA_SET();//ÔÚ¶ÁÊý¾ÝÖ®Ç°£¬°ÑÊý¾ÝÏßÀ­¸ß£¨datesheetÉÏÓÐ½éÉÜ£©,È»ºó°ÑÊý¾ÝÏß¶Ë¿Ú¶ÔCPUÉèÖÃ³ÉÊäÈë¶Ë¿Ú
+   \   000007   12....       LCALL   ?Subroutine11 & 0xFFFF
+    121              HAL_E2PROM_SDA_DIR_IN();
+   \                     ??CrossCallReturnLabel_30:
+   \   00000A   53F4DF       ANL     0xf4,#0xdf
+   \   00000D   53FEDF       ANL     0xfe,#0xdf
+   \   000010   53F6DF       ANL     0xf6,#0xdf
+   \   000013   53F7BF       ANL     0xf7,#0xbf
+    122              halMcuWaitUs(2);
+   \   000016                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000016   7A02         MOV     R2,#0x2
+   \   000018   7B00         MOV     R3,#0x0
+   \   00001A   12....       LCALL   ??ITGMcuWaitUs?relay
+    123          
+    124              for (cnt = 0; cnt < 8; cnt++)
+   \   00001D   7F08         MOV     R7,#0x8
+    125              {
+    126                  res <<= 1;
+   \                     ??M3_I2cRead_0:
+   \   00001F   EE           MOV     A,R6
+   \   000020   C3           CLR     C
+   \   000021   33           RLC     A
+   \   000022   FE           MOV     R6,A
+    127                  if (HAL_E2PROM_SDA_VAL())//cpu»ñÈ¡SDA¶Ë¿ÚÉÏµÄÖµ
+   \   000023   A295         MOV     C,0x90.5
+   \   000025   5003         JNC     ??M3_I2cRead_1
+    128                  {
+    129                      res |= 0x01;
+   \   000027   D2E0         SETB    0xE0 /* A   */.0
+   \   000029   FE           MOV     R6,A
+    130                  }
+    131                  HAL_E2PROM_SCK_SET();
+   \                     ??M3_I2cRead_1:
+   \   00002A   12....       LCALL   ??Subroutine14_0 & 0xFFFF
+    132                  halMcuWaitUs(2);
+   \                     ??CrossCallReturnLabel_23:
+   \   00002D                ; Setup parameters for call to function ITGMcuWaitUs
+   \   00002D   12....       LCALL   ?Subroutine3 & 0xFFFF
+    133                  HAL_E2PROM_SCK_CLR();
+    134                  halMcuWaitUs(2);
+    135              }
+   \                     ??CrossCallReturnLabel_1:
+   \   000030   1F           DEC     R7
+   \   000031   EF           MOV     A,R7
+   \   000032   70EB         JNZ     ??M3_I2cRead_0
+    136           // MCU_IO_OUTPUT(HAL_BOARD_IO_E2PROM_SDA_PORT, HAL_BOARD_IO_E2PROM_SDA_PIN,!ack);   /*µ±ack£½1Ê±À­µÍÊý¾ÝÏß*/
+    137            //  HAL_E2PROM_SDA_SET();
+    138              
+    139              HAL_E2PROM_SCK_SET();                            /*clk #9 for ack*/
+   \   000034   12....       LCALL   ??Subroutine14_0 & 0xFFFF
+    140              halMcuWaitUs(1);                  /*pulswith approx 1 us */
+   \                     ??CrossCallReturnLabel_24:
+   \   000037                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000037   7A01         MOV     R2,#0x1
+   \   000039   7B00         MOV     R3,#0x0
+   \   00003B   12....       LCALL   ??ITGMcuWaitUs?relay
+    141              HAL_E2PROM_SCK_CLR();
+   \   00003E   53F4BF       ANL     0xf4,#0xbf
+   \   000041   C296         CLR     0x90.6
+   \   000043   12....       LCALL   ??Subroutine16_0 & 0xFFFF
+    142              HAL_E2PROM_SDA_SET();
+    143            
+    144              return res;
+   \                     ??CrossCallReturnLabel_29:
+   \   000046                REQUIRE ?Subroutine1
+   \   000046                REQUIRE P1SEL
+   \   000046                REQUIRE _A_P1
+   \   000046                REQUIRE P1DIR
+   \   000046                REQUIRE P1INP
+   \   000046                REQUIRE P2INP
+   \   000046                ; // Fall through to label ?Subroutine1
+    145          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   EE           MOV     A,R6
+   \   000001   F9           MOV     R1,A
+   \   000002                REQUIRE ??Subroutine15_0
+   \   000002                ; // Fall through to label ??Subroutine15_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine16_0:
+   \   000000   43FE40       ORL     0xfe,#0x40
+   \   000003   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   53F4DF       ANL     0xf4,#0xdf
+   \   000003   D295         SETB    0x90.5
+   \   000005   43FE20       ORL     0xfe,#0x20
+   \   000008   22           RET
+    146          static void M3_I2cStart(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    147          void M3_I2cStart(void)//ÔÚSCL±£³Ö¸ßµçÆ½ÆÚ¼ä£¬SDAÓÉ¸ß±äµÍ£¬ÎªÆðÊ¼ÐÅºÅ
+   \                     M3_I2cStart:
+    148          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    149              HAL_E2PROM_SCK_SET();  //SCL=1
+   \   000004   12....       LCALL   ?Subroutine2 & 0xFFFF
+    150          
+    151              HAL_E2PROM_SDA_SET();  //SDA=1
+    152              halMcuWaitUs(2);
+   \                     ??CrossCallReturnLabel_27:
+   \   000007                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000007   7A02         MOV     R2,#0x2
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??ITGMcuWaitUs?relay
+    153              HAL_E2PROM_SDA_CLR();  //SDA=0
+   \   00000E   53F4DF       ANL     0xf4,#0xdf
+   \   000011   C295         CLR     0x90.5
+   \   000013                REQUIRE ?Subroutine0
+   \   000013                REQUIRE P1SEL
+   \   000013                REQUIRE _A_P1
+   \   000013                REQUIRE P1DIR
+   \   000013                ; // Fall through to label ?Subroutine0
+    154              halMcuWaitUs(2);
+    155          
+    156              HAL_E2PROM_SCK_CLR();  //SCL=0
+    157          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   43FE20       ORL     0xfe,#0x20
+   \   000003                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000003                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000003   7A02         MOV     R2,#0x2
+   \   000005   7B00         MOV     R3,#0x0
+   \   000007   12....       LCALL   ??ITGMcuWaitUs?relay
+   \   00000A   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00000D   D083         POP     DPH
+   \   00000F   D082         POP     DPL
+   \   000011   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   53F4BF       ANL     0xf4,#0xbf
+   \   000003   D296         SETB    0x90.6
+   \   000005                REQUIRE ??Subroutine16_0
+   \   000005                ; // Fall through to label ??Subroutine16_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000003   22           RET
+    158          
+    159          //-------------------------------------------------------------------
+    160          static void M3_I2cStop(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    161          void M3_I2cStop(void)//ÔÚSCL±£³Ö¸ßµçÆ½ÆÚ¼ä£¬SDAÓÉµÍ±ä¸ß£¬ÎªÍ£Ö¹ÐÅºÅ
+   \                     M3_I2cStop:
+    162          {    
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    163                
+    164             HAL_E2PROM_SCK_SET();  //SCL=1
+   \   000004   12....       LCALL   ?Subroutine5 & 0xFFFF
+    165          
+    166              HAL_E2PROM_SDA_CLR();  //SDA=0
+    167              halMcuWaitUs(2);
+   \                     ??CrossCallReturnLabel_2:
+   \   000007                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000007   7A02         MOV     R2,#0x2
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??ITGMcuWaitUs?relay
+    168          
+    169              HAL_E2PROM_SDA_SET();  //SDA=1
+   \   00000E   53F4DF       ANL     0xf4,#0xdf
+   \   000011   D295         SETB    0x90.5
+   \   000013   80..         SJMP    ?Subroutine0
+   \   000015                REQUIRE P1SEL
+   \   000015                REQUIRE _A_P1
+   \   000015                REQUIRE P1DIR
+    170              halMcuWaitUs(2);
+    171              
+    172              HAL_E2PROM_SCK_CLR();  //SCL=0
+    173          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   000003   53F4DF       ANL     0xf4,#0xdf
+   \   000006   C295         CLR     0x90.5
+   \   000008   43FE20       ORL     0xfe,#0x20
+   \   00000B   22           RET
+    174          
+    175          //-------------------------------------------------------------------
+    176          static void M3_I2cAck(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    177          void  M3_I2cAck(void)
+   \                     M3_I2cAck:
+    178          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    179              HAL_E2PROM_SCK_SET();     
+   \   000000   12....       LCALL   ?Subroutine2 & 0xFFFF
+    180              HAL_E2PROM_SDA_SET();
+    181              HAL_E2PROM_SCK_CLR();
+   \                     ??CrossCallReturnLabel_28:
+   \   000003   12....       LCALL   ?Subroutine7 & 0xFFFF
+    182          }
+   \                     ??CrossCallReturnLabel_5:
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P1SEL
+   \   000009                REQUIRE _A_P1
+   \   000009                REQUIRE P1DIR
+    183          
+    184          //-------------------------------------------------------------------
+    185          static void M3_I2cNAck(void);
+    186          void M3_I2cNAck(void)
+    187          {
+    188              HAL_E2PROM_SCK_SET();
+    189              HAL_E2PROM_SDA_CLR(); 
+    190              HAL_E2PROM_SCK_CLR();
+    191          }
+    192          
+    193          
+    194          static void M3_WriteEEPROM(uint8 addr, uint8 ch);
+    195          void M3_WriteEEPROM(uint8 addr, uint8 ch)//ÍùEEPROMÀïÐ´Êý¾Ý£¨ÏÈÐ´µØÖ·£¬ÔÚÐ´Êý¾Ý£©
+    196          {
+    197              M3_I2cStart();
+    198              
+    199              M3_I2cWrite(0xD2);//Ð´Æ÷¼þµØÖ·£¬¶ÔÓÚAT24C02À´Ëµ£¬¸ßËÄÎ»¹Ì¶¨Îª1010,ºóÈýÎ»Ã»ÓÐÒâÒå£¬×îºóÒ»Î»Îª0Ê±Ð´£¬Îª1Ê±¶Á
+    200              M3_I2cAck();
+    201              
+    202              M3_I2cWrite(addr);
+    203              M3_I2cAck();
+    204              
+    205              M3_I2cWrite(ch); //data
+    206              M3_I2cAck();
+    207              
+    208              M3_I2cStop();
+    209          }
+    210          static uint8 M3_ReadEEPROM(uint8 addr);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    211          uint8 M3_ReadEEPROM(uint8 addr)
+   \                     M3_ReadEEPROM:
+    212          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    213              uint8 res; 
+    214              
+    215              M3_I2cStart();    
+   \   000007                ; Setup parameters for call to function M3_I2cStart
+   \   000007   12....       LCALL   ?Subroutine4 & 0xFFFF
+    216              M3_I2cWrite(0xD2); //Æ÷¼þÉèÖÃÎªÐ´×´Ì¬
+    217              M3_I2cAck();     
+    218              M3_I2cWrite(addr);
+   \                     ??CrossCallReturnLabel_32:
+   \   00000A                ; Setup parameters for call to function M3_I2cWrite
+   \   00000A   EF           MOV     A,R7
+   \   00000B   F9           MOV     R1,A
+   \   00000C   12....       LCALL   ??Subroutine17_0 & 0xFFFF
+    219              M3_I2cAck();
+    220              
+    221              M3_I2cStart();    
+   \                     ??CrossCallReturnLabel_34:
+   \   00000F                ; Setup parameters for call to function M3_I2cStart
+   \   00000F   12....       LCALL   ??M3_I2cStart?relay
+    222              M3_I2cWrite(0xD3); //Æ÷¼þÉèÖÃÎª¶Á×´Ì¬
+   \   000012                ; Setup parameters for call to function M3_I2cWrite
+   \   000012   79D3         MOV     R1,#-0x2d
+   \   000014   12....       LCALL   ??Subroutine17_0 & 0xFFFF
+    223              M3_I2cAck();  
+    224              
+    225              res = M3_I2cRead();  
+   \                     ??CrossCallReturnLabel_35:
+   \   000017                ; Setup parameters for call to function M3_I2cRead
+   \   000017   12....       LCALL   ??M3_I2cRead?relay
+   \   00001A   E9           MOV     A,R1
+   \   00001B   FE           MOV     R6,A
+    226              M3_I2cNAck();
+   \   00001C   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00001F   12....       LCALL   ?Subroutine7 & 0xFFFF
+    227              M3_I2cStop();
+   \                     ??CrossCallReturnLabel_6:
+   \   000022                ; Setup parameters for call to function M3_I2cStop
+   \   000022   12....       LCALL   ??M3_I2cStop?relay
+    228          
+    229              return res;
+   \   000025   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000028                REQUIRE P1SEL
+   \   000028                REQUIRE _A_P1
+   \   000028                REQUIRE P1DIR
+    230          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ??M3_I2cStart?relay
+   \   000003                ; Setup parameters for call to function M3_I2cWrite
+   \   000003                ; Setup parameters for call to function M3_I2cWrite
+   \   000003   79D2         MOV     R1,#-0x2e
+   \   000005                REQUIRE ??Subroutine17_0
+   \   000005                ; // Fall through to label ??Subroutine17_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine17_0:
+   \   000000   12....       LCALL   ??M3_I2cWrite?relay
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003                ; Setup parameters for call to function M3_I2cAck
+   \   000003   12....       LCALL   ??M3_I2cAck?relay
+   \   000006   22           RET
+    231          static void M3_Init(void);
+    232          void M3_Init(void)//³õÊ¼»¯ SDA=1¡¢SCL=1
+    233          {
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    234              static char initflg=0;
+   \                     ??initflg:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    235              HAL_E2PROM_SDA_DIR_OUT();
+    236              MCU_IO_OUTPUT(HAL_BOARD_IO_E2PROM_SCL_PORT, HAL_BOARD_IO_E2PROM_SCL_PIN,1);
+    237              if(initflg==0)
+    238                  {
+    239                       M3_WriteEEPROM(0x16,0x18);
+    240                      initflg=1 ;           
+    241                  }
+    242          }
+    243          
+    244          /*******************************************************************
+    245           * Ãû³Æ      ITG_Pooling
+    246           * ¹¦ÄÜ      ¶ÁÈ¡itg_3200µÄX,Y ZµÄ½ÇËÙ¶È
+    247           * Èë¿Ú²ÎÊý  (int16* X_Value, int16* Y_Value, int16* Z_Value  )
+    248                      *X_Value£ºXÖáµÄ16Î»½ÇËÙ¶È´æ·ÅµØÖ·
+    249                      *Y_Value£ºYÖáµÄ16Î»½ÇËÙ¶È´æ·ÅµØÖ·
+    250                      *Z_Value£ºZÖáµÄ16Î»½ÇËÙ¶È´æ·ÅµØÖ·
+    251                      ½ÇËÙ¶ÈÖµÎª16Î»ÓÐ·ûºÅÊý£¬µ¥Î»Îª ¶È/S
+    252           * ³ö¿Ú²ÎÊý  ÎÞ  
+    253           *****************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    254          void  ITG_Pooling(int16* X_Value, int16* Y_Value, int16* Z_Value  )
+   \                     ITG_Pooling:
+    255          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EC           MOV     A,R4
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   ED           MOV     A,R5
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   8A..         MOV     ?V0 + 14,R2
+   \   000017   8B..         MOV     ?V0 + 15,R3
+   \   000019   741A         MOV     A,#0x1a
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F5..         MOV     ?V0 + 2,A
+   \   000021   A3           INC     DPTR
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F5..         MOV     ?V0 + 3,A
+    256              int8 BMA_XM_Value,BMA_YM_Value,BMA_ZM_Value;
+    257              int8 BMA_XL_Value,BMA_YL_Value,BMA_ZL_Value;
+    258              int16 num_x1=0,num_y1=0,num_z1=0;
+    259              int16 num_x=0,num_y=0,num_z=0;
+   \   000025   75..00       MOV     ?V0 + 4,#0x0
+   \   000028   75..00       MOV     ?V0 + 5,#0x0
+   \   00002B   7E00         MOV     R6,#0x0
+   \   00002D   7F00         MOV     R7,#0x0
+   \   00002F   8E..         MOV     ?V0 + 0,R6
+   \   000031   8E..         MOV     ?V0 + 1,R6
+    260              uint8 i = 0;
+    261              M3_Init();
+   \   000033   53F4DF       ANL     0xf4,#0xdf
+   \   000036   D295         SETB    0x90.5
+   \   000038   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   00003B   90....       MOV     DPTR,#??initflg
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   7016         JNZ     ??ITG_Pooling_0
+   \   000041                ; Setup parameters for call to function M3_I2cStart
+   \   000041   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   000044                ; Setup parameters for call to function M3_I2cWrite
+   \   000044   7916         MOV     R1,#0x16
+   \   000046   12....       LCALL   ??Subroutine17_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   000049                ; Setup parameters for call to function M3_I2cWrite
+   \   000049   7918         MOV     R1,#0x18
+   \   00004B   12....       LCALL   ??Subroutine17_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   00004E                ; Setup parameters for call to function M3_I2cStop
+   \   00004E   12....       LCALL   ??M3_I2cStop?relay
+   \   000051   90....       MOV     DPTR,#??initflg
+   \   000054   7401         MOV     A,#0x1
+   \   000056   F0           MOVX    @DPTR,A
+    262              for(i=0;i<10;i++)
+   \                     ??ITG_Pooling_0:
+   \   000057   75..0A       MOV     ?V0 + 6,#0xa
+    263             {
+    264                  while (!(M3_ReadEEPROM(0x1A) & 0x01)); 
+   \                     ??ITG_Pooling_1:
+   \   00005A                ; Setup parameters for call to function M3_ReadEEPROM
+   \   00005A   791A         MOV     R1,#0x1a
+   \   00005C   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00005F   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000061   50F7         JNC     ??ITG_Pooling_1
+    265                  BMA_XM_Value = M3_ReadEEPROM(0x1D); 
+   \   000063                ; Setup parameters for call to function M3_ReadEEPROM
+   \   000063   791D         MOV     R1,#0x1d
+   \   000065   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000068   F5..         MOV     ?V0 + 7,A
+    266                  halMcuWaitUs(5);
+   \   00006A                ; Setup parameters for call to function ITGMcuWaitUs
+   \   00006A   7A05         MOV     R2,#0x5
+   \   00006C   7B00         MOV     R3,#0x0
+   \   00006E   12....       LCALL   ??ITGMcuWaitUs?relay
+    267                  BMA_XL_Value = M3_ReadEEPROM(0x1E); 
+   \   000071                ; Setup parameters for call to function M3_ReadEEPROM
+   \   000071   791E         MOV     R1,#0x1e
+   \   000073   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000076   F5..         MOV     ?V0 + 8,A
+    268                  halMcuWaitUs(5);
+   \   000078                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000078   7A05         MOV     R2,#0x5
+   \   00007A   7B00         MOV     R3,#0x0
+   \   00007C   12....       LCALL   ??ITGMcuWaitUs?relay
+    269                  BMA_YM_Value = M3_ReadEEPROM(0x1F);
+   \   00007F                ; Setup parameters for call to function M3_ReadEEPROM
+   \   00007F   791F         MOV     R1,#0x1f
+   \   000081   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000084   F5..         MOV     ?V0 + 9,A
+    270                  halMcuWaitUs(5);
+   \   000086                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000086   7A05         MOV     R2,#0x5
+   \   000088   7B00         MOV     R3,#0x0
+   \   00008A   12....       LCALL   ??ITGMcuWaitUs?relay
+    271                  BMA_YL_Value = M3_ReadEEPROM(0x20);
+   \   00008D                ; Setup parameters for call to function M3_ReadEEPROM
+   \   00008D   7920         MOV     R1,#0x20
+   \   00008F   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000092   F5..         MOV     ?V0 + 10,A
+    272                  halMcuWaitUs(5);       
+   \   000094                ; Setup parameters for call to function ITGMcuWaitUs
+   \   000094   7A05         MOV     R2,#0x5
+   \   000096   7B00         MOV     R3,#0x0
+   \   000098   12....       LCALL   ??ITGMcuWaitUs?relay
+    273                  BMA_ZM_Value = M3_ReadEEPROM(0x21);
+   \   00009B                ; Setup parameters for call to function M3_ReadEEPROM
+   \   00009B   7921         MOV     R1,#0x21
+   \   00009D   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   0000A0   F5..         MOV     ?V0 + 11,A
+    274                  halMcuWaitUs(5);
+   \   0000A2                ; Setup parameters for call to function ITGMcuWaitUs
+   \   0000A2   7A05         MOV     R2,#0x5
+   \   0000A4   7B00         MOV     R3,#0x0
+   \   0000A6   12....       LCALL   ??ITGMcuWaitUs?relay
+    275                  BMA_ZL_Value = M3_ReadEEPROM(0x22);
+   \   0000A9                ; Setup parameters for call to function M3_ReadEEPROM
+   \   0000A9   7922         MOV     R1,#0x22
+   \   0000AB   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   0000AE   F5..         MOV     ?V0 + 12,A
+    276                  halMcuWaitUs(5);
+   \   0000B0                ; Setup parameters for call to function ITGMcuWaitUs
+   \   0000B0   7A05         MOV     R2,#0x5
+   \   0000B2   7B00         MOV     R3,#0x0
+   \   0000B4   12....       LCALL   ??ITGMcuWaitUs?relay
+    277                  num_x1 = (BMA_XM_Value << 8) | BMA_XL_Value;
+    278                  num_y1 = (BMA_YM_Value << 8) | BMA_YL_Value;
+    279                  num_z1 = (BMA_ZM_Value << 8) | BMA_ZL_Value;
+    280                  num_x = num_x + num_x1;
+   \   0000B7   E5..         MOV     A,?V0 + 7
+   \   0000B9   F8           MOV     R0,A
+   \   0000BA   33           RLC     A
+   \   0000BB   95E0         SUBB    A,0xE0 /* A   */
+   \   0000BD   E8           MOV     A,R0
+   \   0000BE   F9           MOV     R1,A
+   \   0000BF   E5..         MOV     A,?V0 + 8
+   \   0000C1   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000C4   E5..         MOV     A,?V0 + 4
+   \   0000C6   28           ADD     A,R0
+   \   0000C7   F5..         MOV     ?V0 + 4,A
+   \   0000C9   E5..         MOV     A,?V0 + 5
+   \   0000CB   39           ADDC    A,R1
+   \   0000CC   F5..         MOV     ?V0 + 5,A
+    281                  num_y = num_y + num_y1;
+   \   0000CE   E5..         MOV     A,?V0 + 9
+   \   0000D0   F8           MOV     R0,A
+   \   0000D1   33           RLC     A
+   \   0000D2   95E0         SUBB    A,0xE0 /* A   */
+   \   0000D4   E8           MOV     A,R0
+   \   0000D5   F9           MOV     R1,A
+   \   0000D6   E5..         MOV     A,?V0 + 10
+   \   0000D8   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   0000DB   EE           MOV     A,R6
+   \   0000DC   28           ADD     A,R0
+   \   0000DD   FE           MOV     R6,A
+   \   0000DE   EF           MOV     A,R7
+   \   0000DF   39           ADDC    A,R1
+   \   0000E0   FF           MOV     R7,A
+    282                  num_z = num_z + num_z1;
+   \   0000E1   E5..         MOV     A,?V0 + 11
+   \   0000E3   F8           MOV     R0,A
+   \   0000E4   33           RLC     A
+   \   0000E5   95E0         SUBB    A,0xE0 /* A   */
+   \   0000E7   E8           MOV     A,R0
+   \   0000E8   F9           MOV     R1,A
+   \   0000E9   E5..         MOV     A,?V0 + 12
+   \   0000EB   12....       LCALL   ?Subroutine8 & 0xFFFF
+    283             }
+   \                     ??CrossCallReturnLabel_9:
+   \   0000EE   E5..         MOV     A,?V0 + 0
+   \   0000F0   28           ADD     A,R0
+   \   0000F1   F5..         MOV     ?V0 + 0,A
+   \   0000F3   E5..         MOV     A,?V0 + 1
+   \   0000F5   39           ADDC    A,R1
+   \   0000F6   F5..         MOV     ?V0 + 1,A
+   \   0000F8   15..         DEC     ?V0 + 6
+   \   0000FA   E5..         MOV     A,?V0 + 6
+   \   0000FC   6003         JZ      $+5
+   \   0000FE   02....       LJMP    ??ITG_Pooling_1 & 0xFFFF
+    284              // »»Ëã³É ¶È/S
+    285              *X_Value = (int16)(num_x/10/14.375);
+   \   000101   A8..         MOV     R0,?V0 + 4
+   \   000103   A9..         MOV     R1,?V0 + 5
+   \   000105   7A0A         MOV     R2,#0xa
+   \   000107   7B00         MOV     R3,#0x0
+   \   000109   12....       LCALL   ?S_DIV_MOD
+   \   00010C   88..         MOV     ?V0 + 8,R0
+   \   00010E   E9           MOV     A,R1
+   \   00010F   F5..         MOV     ?V0 + 9,A
+   \   000111   33           RLC     A
+   \   000112   95E0         SUBB    A,0xE0 /* A   */
+   \   000114   F5..         MOV     ?V0 + 10,A
+   \   000116   F5..         MOV     ?V0 + 11,A
+   \   000118   78..         MOV     R0,#?V0 + 8
+   \   00011A   12....       LCALL   ?L_TO_FLT
+   \   00011D   90....       MOV     DPTR,#__Constant_41660000
+   \   000120   78..         MOV     R0,#?V0 + 4
+   \   000122   12....       LCALL   ?L_MOV_X
+   \   000125   78..         MOV     R0,#?V0 + 8
+   \   000127   79..         MOV     R1,#?V0 + 4
+   \   000129   12....       LCALL   ?FLT_DIV
+   \   00012C   78..         MOV     R0,#?V0 + 8
+   \   00012E   12....       LCALL   ?FLT_TO_L
+   \   000131   85..82       MOV     DPL,?V0 + 14
+   \   000134   85..83       MOV     DPH,?V0 + 15
+   \   000137   E5..         MOV     A,?V0 + 8
+   \   000139   F0           MOVX    @DPTR,A
+   \   00013A   A3           INC     DPTR
+   \   00013B   E5..         MOV     A,?V0 + 9
+   \   00013D   F0           MOVX    @DPTR,A
+    286              *Y_Value = (int16)(num_y/10/14.375);
+   \   00013E   EE           MOV     A,R6
+   \   00013F   F8           MOV     R0,A
+   \   000140   EF           MOV     A,R7
+   \   000141   F9           MOV     R1,A
+   \   000142   7A0A         MOV     R2,#0xa
+   \   000144   7B00         MOV     R3,#0x0
+   \   000146   12....       LCALL   ?S_DIV_MOD
+   \   000149   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   00014C   12....       LCALL   ?L_TO_FLT
+   \   00014F   90....       MOV     DPTR,#__Constant_41660000
+   \   000152   78..         MOV     R0,#?V0 + 8
+   \   000154   12....       LCALL   ?L_MOV_X
+   \   000157   78..         MOV     R0,#?V0 + 4
+   \   000159   79..         MOV     R1,#?V0 + 8
+   \   00015B   12....       LCALL   ?FLT_DIV
+   \   00015E   78..         MOV     R0,#?V0 + 4
+   \   000160   12....       LCALL   ?FLT_TO_L
+   \   000163   85..82       MOV     DPL,?XSP + 0
+   \   000166   85..83       MOV     DPH,?XSP + 1
+   \   000169   E0           MOVX    A,@DPTR
+   \   00016A   F8           MOV     R0,A
+   \   00016B   A3           INC     DPTR
+   \   00016C   E0           MOVX    A,@DPTR
+   \   00016D   F583         MOV     DPH,A
+   \   00016F   8882         MOV     DPL,R0
+   \   000171   E5..         MOV     A,?V0 + 4
+   \   000173   F0           MOVX    @DPTR,A
+   \   000174   A3           INC     DPTR
+   \   000175   E5..         MOV     A,?V0 + 5
+   \   000177   F0           MOVX    @DPTR,A
+    287              *Z_Value = (int16)(num_z/10/14.375);
+   \   000178   A8..         MOV     R0,?V0 + 0
+   \   00017A   A9..         MOV     R1,?V0 + 1
+   \   00017C   7A0A         MOV     R2,#0xa
+   \   00017E   7B00         MOV     R3,#0x0
+   \   000180   12....       LCALL   ?S_DIV_MOD
+   \   000183   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   000186   12....       LCALL   ?L_TO_FLT
+   \   000189   90....       MOV     DPTR,#__Constant_41660000
+   \   00018C   78..         MOV     R0,#?V0 + 8
+   \   00018E   12....       LCALL   ?L_MOV_X
+   \   000191   78..         MOV     R0,#?V0 + 4
+   \   000193   79..         MOV     R1,#?V0 + 8
+   \   000195   12....       LCALL   ?FLT_DIV
+   \   000198   78..         MOV     R0,#?V0 + 4
+   \   00019A   12....       LCALL   ?FLT_TO_L
+   \   00019D   85..82       MOV     DPL,?V0 + 2
+   \   0001A0   85..83       MOV     DPH,?V0 + 3
+   \   0001A3   E5..         MOV     A,?V0 + 4
+   \   0001A5   F0           MOVX    @DPTR,A
+   \   0001A6   A3           INC     DPTR
+   \   0001A7   E5..         MOV     A,?V0 + 5
+   \   0001A9   F0           MOVX    @DPTR,A
+    288          }
+   \   0001AA   7402         MOV     A,#0x2
+   \   0001AC   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001AF   7F10         MOV     R7,#0x10
+   \   0001B1   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0001B4                REQUIRE P1SEL
+   \   0001B4                REQUIRE _A_P1
+   \   0001B4                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   88..         MOV     ?V0 + 4,R0
+   \   000002   E9           MOV     A,R1
+   \   000003   F5..         MOV     ?V0 + 5,A
+   \   000005   33           RLC     A
+   \   000006   95E0         SUBB    A,0xE0 /* A   */
+   \   000008   F5..         MOV     ?V0 + 6,A
+   \   00000A   F5..         MOV     ?V0 + 7,A
+   \   00000C   78..         MOV     R0,#?V0 + 4
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   12....       LCALL   ??M3_ReadEEPROM?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   FA           MOV     R2,A
+   \   000001   33           RLC     A
+   \   000002   95E0         SUBB    A,0xE0 /* A   */
+   \   000004   FB           MOV     R3,A
+   \   000005   EA           MOV     A,R2
+   \   000006   F8           MOV     R0,A
+   \   000007   E9           MOV     A,R1
+   \   000008   4B           ORL     A,R3
+   \   000009   F9           MOV     R1,A
+   \   00000A   22           RET
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_41660000:
+   \   000000   00006641     DD 41660000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ITGMcuWaitUs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ITGMcuWaitUs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_I2cWrite?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_I2cWrite
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_I2cRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_I2cRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_I2cStart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_I2cStart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_I2cStop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_I2cStop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_I2cAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_I2cAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??M3_ReadEEPROM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    M3_ReadEEPROM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ITG_Pooling?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ITG_Pooling
+    289          
+    290          
+    291          
+    292          
+
+   Maximum stack usage in bytes:
+
+     Function           ISTACK PSTACK XSTACK
+     --------           ------ ------ ------
+     ITGMcuWaitUs           0      0     26
+     ITG_Pooling            0      0     28
+       -> M3_I2cStart       0      0     52
+       -> M3_I2cWrite       0      0     52
+       -> M3_I2cAck         0      0     52
+       -> M3_I2cWrite       0      0     52
+       -> M3_I2cAck         0      0     52
+       -> M3_I2cWrite       0      0     52
+       -> M3_I2cAck         0      0     52
+       -> M3_I2cStop        0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+       -> M3_ReadEEPROM     0      0     52
+       -> ITGMcuWaitUs      0      0     52
+     M3_I2cAck              0      0     26
+     M3_I2cRead             0      0     18
+       -> ITGMcuWaitUs      0      0     18
+       -> ITGMcuWaitUs      0      0     18
+       -> ITGMcuWaitUs      0      0     18
+       -> ITGMcuWaitUs      0      0     18
+     M3_I2cStart            2      0     26
+       -> ITGMcuWaitUs      4      0      0
+       -> ITGMcuWaitUs      4      0      0
+     M3_I2cStop             2      0     26
+       -> ITGMcuWaitUs      4      0      0
+       -> ITGMcuWaitUs      4      0      0
+     M3_I2cWrite            0      0     35
+       -> ITGMcuWaitUs      0      0     18
+       -> ITGMcuWaitUs      0      0     18
+     M3_ReadEEPROM          0      0     35
+       -> M3_I2cStart       0      0     18
+       -> M3_I2cWrite       0      0     18
+       -> M3_I2cAck         0      0     18
+       -> M3_I2cWrite       0      0     18
+       -> M3_I2cAck         0      0     18
+       -> M3_I2cStart       0      0     18
+       -> M3_I2cWrite       0      0     18
+       -> M3_I2cAck         0      0     18
+       -> M3_I2cRead        0      0     18
+       -> M3_I2cStop        0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P1                    1
+     P1SEL                    1
+     P1INP                    1
+     P2INP                    1
+     P1DIR                    1
+     ITGMcuWaitUs            44
+     M3_I2cWrite             38
+     ?Subroutine6             3
+     ??Subroutine14_0         4
+     ?Subroutine12            9
+     ??Subroutine15_0         5
+     ?Subroutine3            18
+     ?Subroutine13            9
+     M3_I2cRead              70
+     ?Subroutine1             2
+     ??Subroutine16_0         7
+     ?Subroutine11            9
+     M3_I2cStart             19
+     ?Subroutine0            20
+     ?Subroutine2             5
+     ?Subroutine7             4
+     M3_I2cStop              21
+     ?Subroutine5            12
+     M3_I2cAck                9
+     M3_ReadEEPROM           40
+     ?Subroutine4             5
+     ??Subroutine17_0         7
+     initflg                  1
+     ITG_Pooling            436
+     ?Subroutine10           15
+     ?Subroutine9             5
+     ?Subroutine8            11
+     __Constant_41660000      4
+     ??ITGMcuWaitUs?relay     6
+     ??M3_I2cWrite?relay      6
+     ??M3_I2cRead?relay       6
+     ??M3_I2cStart?relay      6
+     ??M3_I2cStop?relay       6
+     ??M3_I2cAck?relay        6
+     ??M3_ReadEEPROM?relay    6
+     ??ITG_Pooling?relay      6
+
+ 
+ 827 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+   5 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+ 875 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 5 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

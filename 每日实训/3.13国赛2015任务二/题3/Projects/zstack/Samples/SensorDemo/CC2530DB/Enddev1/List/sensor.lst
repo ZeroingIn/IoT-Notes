@@ -1,0 +1,666 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Mar/2017  10:28:07 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\Source\sensor.c                #
+#    Command line       =  -f F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2 #
+#                          530DB\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x8888                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\Source\sensor.c -D VER=2.3 -D  #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HOLD_AUTO_START -D   #
+#                          BUILD_ALL_DEVICES -D REFLECTOR -D NV_INIT -D       #
+#                          xNV_RESTORE -D ZTOOL_P1 -D MT_TASK -D              #
+#                          DEVICE_LOGICAL_TYPE=01 -D LOG_TYPE=02 -D           #
+#                          xUART_SENSOR -D xLCD_SUPPORTED -D UART_LOOK -lC    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev1\List\ -lA     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev1\List\         #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev1\Obj\ -e       #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\ -I                #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\SOURCE\ -I         #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\MYAPP\ -I          #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\sensor_drv\ -I     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\ZMAIN\TI2530 #
+#                          DB\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects #
+#                          \zstack\Samples\SensorDemo\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\MT\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\HAL\TARGET\CC2530EB\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\OSAL\MCU\CCSOC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I      #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\AF\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\STACK\NWK\ -I               #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SEC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\SAPI\ -I             #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SYS\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\ZDO\ -I              #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\ZMAC\F8W\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\ZMAC\ -I                    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\SERVICES\SADDR\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\INCLUDE\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶ #
+#                          þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev1\List\sensor.l #
+#                          st                                                 #
+#    Object file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev1\Obj\sensor.r5 #
+#                          1                                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\Source\sensor.c
+      1          /**************************************************************************************************
+      2            Filename:       sensor.c  */
+      3          
+      4          
+      5          
+      6          #include "hal_defs.h"
+      7          #include "hal_types.h"
+      8          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr APCFG
+   \                     APCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      9          #include "ioCC2530.h"
+     10          #include "sh10.h"
+     11          #include "get_adc.h"
+     12          #include "sensor.h"
+     13          #include "dma_itg.h"
+     14          #include "bma020.h"
+     15          #include "UART_PRINT.h"
+     16          #include "OnBoard.h"
+     17          #include "hal_board_cfg.h"
+     18           
+     19          /******************************************************************************
+     20           * GLOBAL VARIABLES
+     21           */
+     22          void hal_LightSensor_Init(void);
+     23          static uint16 readVoltage(void);
+     24          
+     25          uint16 get_guangdian_ad(void);
+     26          void get_4channel_ad(uint8 *buf);
+     27          uint8 get_rentihongwai(void);
+     28          void get_wendu_shidu(int16 *temp, int16 *hum);
+     29          //static volatile uint32 value;
+     30          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     31          void hal_LightSensor_Init(void)
+   \                     hal_LightSensor_Init:
+     32          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     33          	APCFG  |=1;   
+   \   000000   43F201       ORL     0xf2,#0x1
+     34                  P0SEL  |= (1 << (0));	
+   \   000003   43F301       ORL     0xf3,#0x1
+     35                  P0DIR  &= ~(1 << (0));	
+   \   000006   53FDFE       ANL     0xfd,#0xfe
+     36                  P0INP |=1; 
+   \   000009   438F01       ORL     0x8f,#0x1
+     37                  //P0INP &= ~1;
+     38                  //P2INP |= 0x20;
+     39                  
+     40          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE APCFG
+   \   00000F                REQUIRE P0SEL
+   \   00000F                REQUIRE P0DIR
+   \   00000F                REQUIRE P0INP
+     41          /******************************************************************************
+     42           * @fn          readVoltage
+     43           *
+     44           * @brief       read voltage from ADC
+     45           *
+     46           * @param       none
+     47           *              
+     48           * @return      voltage
+     49           *******/
+     50          static uint16 readVoltage(void)
+     51          {
+     52          
+     53             uint32 value;
+     54             int16 value1;
+     55             hal_LightSensor_Init(); 
+     56            // Clear ADC interrupt flag 
+     57            ADCIF = 0;
+     58          
+     59            ADCCON3 = (0x80 | 0x10 | 0x00);
+     60            //ADCCON3 = (0x80 | 0x10 | 0x0c);
+     61            //²ÉÓÃ»ù×¼µçÑ¹avdd5:3.3V
+     62            //  Wait for the conversion to finish 
+     63            while ( !ADCIF );
+     64          
+     65            // Get the result
+     66            value1 = ADCH;
+     67            value1 = value1<< 8;
+     68            value1 |= ADCL;
+     69            if(value1<0)
+     70                value1=0;
+     71            value=value1;
+     72          
+     73            // value now contains measurement of 3.3V
+     74            // 0 indicates 0V and 32767 indicates 3.3V
+     75            // voltage = (value*3.3)/32767 volts
+     76            // we will multiply by this by 10 to allow units of 0.01 volts
+     77            value = value >> 6;   // divide first by 2^6
+     78            value = (uint32)(value * 330);
+     79            value = value >> 9;   // ...and later by 2^9...to prevent overflow during multiplication
+     80          
+     81            return (uint16)value;
+     82           
+     83          }
+     84          
+     85          /******************************************************************************
+     86           * @fn          readsensor
+     87           *
+     88           * @brief       read readsensor ´«¸ÐÆ÷²ÉÑù
+     89           *
+     90           * @param       sensorid
+     91           *              
+     92           * @return      sensor value, len
+     93           *******/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     94          uint8 readsensor(uint8 sensorid, char *val)
+   \                     readsensor:
+     95          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+     96                 if(sensorid == 0x01)
+   \   00000B   7401         MOV     A,#0x1
+   \   00000D   65..         XRL     A,?V0 + 2
+   \   00000F   7004         JNZ     ??readsensor_0
+     97                 {    //ÎÂÊª¶È
+     98                     //call_sht11(tmp1,tmp2);
+     99                     
+    100                     return 4;    
+   \   000011   7904         MOV     R1,#0x4
+   \   000013   8070         SJMP    ??readsensor_1
+    101                 } 
+    102                 if(sensorid == 0x02)
+   \                     ??readsensor_0:
+   \   000015   EE           MOV     A,R6
+   \   000016   2402         ADD     A,#0x2
+   \   000018   FC           MOV     R4,A
+   \   000019   EF           MOV     A,R7
+   \   00001A   3400         ADDC    A,#0x0
+   \   00001C   FD           MOV     R5,A
+   \   00001D   EE           MOV     A,R6
+   \   00001E   2404         ADD     A,#0x4
+   \   000020   F5..         MOV     ?V0 + 0,A
+   \   000022   EF           MOV     A,R7
+   \   000023   3400         ADDC    A,#0x0
+   \   000025   F5..         MOV     ?V0 + 1,A
+   \   000027   7402         MOV     A,#0x2
+   \   000029   65..         XRL     A,?V0 + 2
+   \   00002B   7011         JNZ     ??readsensor_2
+    103                 {    // G_SENSOR
+    104                     BMA_Pooling((int16*)val, (int16*)(val+2),(int16*)(val+4));
+   \   00002D                ; Setup parameters for call to function BMA_Pooling
+   \   00002D   78..         MOV     R0,#?V0 + 0
+   \   00002F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000032   12....       LCALL   ??BMA_Pooling?relay
+   \                     ??readsensor_3:
+   \   000035   7402         MOV     A,#0x2
+   \   000037   12....       LCALL   ?DEALLOC_XSTACK8
+    105                     return 6;    
+   \   00003A   7906         MOV     R1,#0x6
+   \   00003C   8047         SJMP    ??readsensor_1
+    106                 } 
+    107                 if(sensorid == 0x03)
+   \                     ??readsensor_2:
+   \   00003E   7403         MOV     A,#0x3
+   \   000040   65..         XRL     A,?V0 + 2
+   \   000042   700A         JNZ     ??readsensor_4
+    108                 {    //ÍÓÂÝÒÇ
+    109                      ITG_Pooling((int16*)val, (int16*)(val+2),(int16*)(val+4));
+   \   000044                ; Setup parameters for call to function ITG_Pooling
+   \   000044   78..         MOV     R0,#?V0 + 0
+   \   000046   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000049   12....       LCALL   ??ITG_Pooling?relay
+   \   00004C   80E7         SJMP    ??readsensor_3
+    110                      return 6;    
+    111                 } 
+    112                  if(sensorid == 0x4)
+   \                     ??readsensor_4:
+   \   00004E   7404         MOV     A,#0x4
+   \   000050   65..         XRL     A,?V0 + 2
+   \   000052   7010         JNZ     ??readsensor_5
+    113                 {    //ÈËÌå p0.1 
+    114                      APCFG &= ~(1<<1);
+   \   000054   12....       LCALL   ?Subroutine1 & 0xFFFF
+    115                      P0SEL  &= ~(1 << (1));
+    116                      P0DIR  &= ~(1 << (1));	
+    117                      *val=0;
+   \                     ??CrossCallReturnLabel_0:
+   \   000057   8E82         MOV     DPL,R6
+   \   000059   8F83         MOV     DPH,R7
+   \   00005B   E4           CLR     A
+   \   00005C   F0           MOVX    @DPTR,A
+    118                      if( P0_1==0 )
+   \   00005D   A281         MOV     C,0x80.1
+   \   00005F   4022         JC      ??readsensor_6
+    119                         *val=0x01; 
+   \   000061   04           INC     A
+   \   000062   801E         SJMP    ??readsensor_7
+    120                      return 2;    
+    121                 } 
+    122                 if(sensorid == 0x5)
+   \                     ??readsensor_5:
+   \   000064   7405         MOV     A,#0x5
+   \   000066   65..         XRL     A,?V0 + 2
+   \   000068   7007         JNZ     ??readsensor_8
+    123                 {    //ËÄÍ¨µÀ ad  
+    124                      get_adc4ch(val);
+                                        ^
+Warning[Pe167]: argument of type "char *" is incompatible with parameter of
+          type "unsigned char *"
+   \   00006A                ; Setup parameters for call to function get_adc4ch
+   \   00006A   12....       LCALL   ??get_adc4ch?relay
+    125                      return 8;    
+   \   00006D   7908         MOV     R1,#0x8
+   \   00006F   8014         SJMP    ??readsensor_1
+    126                 } 
+    127                 if(sensorid == 0x6)
+   \                     ??readsensor_8:
+   \   000071   7406         MOV     A,#0x6
+   \   000073   65..         XRL     A,?V0 + 2
+   \   000075   700E         JNZ     ??readsensor_1
+    128                 {    //¹âÕÕ  adc »òÆäËû  
+    129                      *(int16*)val=get_adc();
+   \   000077                ; Setup parameters for call to function get_adc
+   \   000077   12....       LCALL   ??get_adc?relay
+   \   00007A   8E82         MOV     DPL,R6
+   \   00007C   8F83         MOV     DPH,R7
+   \   00007E   EA           MOV     A,R2
+   \   00007F   F0           MOVX    @DPTR,A
+   \   000080   A3           INC     DPTR
+   \   000081   EB           MOV     A,R3
+   \                     ??readsensor_7:
+   \   000082   F0           MOVX    @DPTR,A
+    130                      return 2;    
+   \                     ??readsensor_6:
+   \   000083   7902         MOV     R1,#0x2
+   \                     ??readsensor_1:
+   \   000085   7F03         MOV     R7,#0x3
+   \   000087   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00008A                REQUIRE APCFG
+   \   00008A                REQUIRE P0SEL
+   \   00008A                REQUIRE P0DIR
+   \   00008A                REQUIRE _A_P0
+    131                 } 
+    132          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "readsensor"
+
+  static uint16 readVoltage(void)
+                ^
+"F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\Source\sensor.c",50  Warning[Pe177]: 
+          function "readVoltage" was declared but never referenced
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   53F2FD       ANL     0xf2,#0xfd
+   \   000003   53F3FD       ANL     0xf3,#0xfd
+   \   000006   53FDFD       ANL     0xfd,#0xfd
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    133          uint16 get_guangdian_ad(void)
+   \                     get_guangdian_ad:
+    134          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    135            return get_adc();
+   \   000004                ; Setup parameters for call to function get_adc
+   \   000004   12....       LCALL   ??get_adc?relay
+   \   000007                REQUIRE ?Subroutine0
+   \   000007                ; // Fall through to label ?Subroutine0
+    136          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    137          void get_4channel_ad(uint8 *buf)
+   \                     get_4channel_ad:
+    138          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    139            get_adc4ch(buf);
+   \   000004                ; Setup parameters for call to function get_adc4ch
+   \   000004   12....       LCALL   ??get_adc4ch?relay
+    140          }
+   \   000007   80..         SJMP    ?Subroutine0
+    141          //1 youren
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    142          uint8 get_rentihongwai(void)
+   \                     get_rentihongwai:
+    143          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    144            uint8 val;
+    145            APCFG &= ~(1<<1);
+   \   000000   12....       LCALL   ?Subroutine1 & 0xFFFF
+    146            P0SEL  &= ~(1 << (1));
+    147            P0DIR  &= ~(1 << (1));	
+    148            val=0;
+   \                     ??CrossCallReturnLabel_1:
+   \   000003   7900         MOV     R1,#0x0
+    149            if( P0_1==0 )
+   \   000005   A281         MOV     C,0x80.1
+   \   000007   4001         JC      ??get_rentihongwai_0
+    150               val=0x01; 
+   \   000009   09           INC     R1
+    151            return val;
+   \                     ??get_rentihongwai_0:
+   \   00000A   02....       LJMP    ?BRET
+   \   00000D                REQUIRE APCFG
+   \   00000D                REQUIRE P0SEL
+   \   00000D                REQUIRE P0DIR
+   \   00000D                REQUIRE _A_P0
+    152          }
+    153          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    154          void get_wendu_shidu(int16 *temp, int16 *hum)
+   \                     get_wendu_shidu:
+    155          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 0,R2
+   \   00000C   8B..         MOV     ?V0 + 1,R3
+   \   00000E   EC           MOV     A,R4
+   \   00000F   FE           MOV     R6,A
+   \   000010   ED           MOV     A,R5
+   \   000011   FF           MOV     R7,A
+    156            int16 tmp1,tmp2;
+    157            call_sht11 (&tmp1,&tmp2);
+   \   000012                ; Setup parameters for call to function call_sht11
+   \   000012   85..82       MOV     DPL,?XSP + 0
+   \   000015   85..83       MOV     DPH,?XSP + 1
+   \   000018   AC82         MOV     R4,DPL
+   \   00001A   AD83         MOV     R5,DPH
+   \   00001C   7402         MOV     A,#0x2
+   \   00001E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+   \   000025   12....       LCALL   ??call_sht11?relay
+    158            *temp = tmp1;
+   \   000028   7402         MOV     A,#0x2
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F8           MOV     R0,A
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   F9           MOV     R1,A
+   \   000032   85..82       MOV     DPL,?V0 + 0
+   \   000035   85..83       MOV     DPH,?V0 + 1
+   \   000038   E8           MOV     A,R0
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   E9           MOV     A,R1
+   \   00003C   F0           MOVX    @DPTR,A
+    159            *hum = tmp2;
+   \   00003D   85..82       MOV     DPL,?XSP + 0
+   \   000040   85..83       MOV     DPH,?XSP + 1
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   F8           MOV     R0,A
+   \   000045   A3           INC     DPTR
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   F9           MOV     R1,A
+   \   000048   8E82         MOV     DPL,R6
+   \   00004A   8F83         MOV     DPH,R7
+   \   00004C   E8           MOV     A,R0
+   \   00004D   F0           MOVX    @DPTR,A
+   \   00004E   A3           INC     DPTR
+   \   00004F   E9           MOV     A,R1
+   \   000050   F0           MOVX    @DPTR,A
+    160          }
+   \   000051   7404         MOV     A,#0x4
+   \   000053   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000056   7F02         MOV     R7,#0x2
+   \   000058   02....       LJMP    ?BANKED_LEAVE_XDATA
+    161          //1 dongzuo
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          void set_relay(uint8 status)
+   \                     set_relay:
+    163          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    164            if(status == 1){
+   \   000000   7401         MOV     A,#0x1
+   \   000002   69           XRL     A,R1
+   \   000003   7004         JNZ     ??set_relay_0
+    165              HAL_TURN_ON_DC1();
+   \   000005   D2A0         SETB    0xa0.0
+   \   000007   8002         SJMP    ??set_relay_1
+    166            }else{
+    167              HAL_TURN_OFF_DC1();
+   \                     ??set_relay_0:
+   \   000009   C2A0         CLR     0xa0.0
+    168            }
+    169          }
+   \                     ??set_relay_1:
+   \   00000B   02....       LJMP    ?BRET
+   \   00000E                REQUIRE _A_P2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_LightSensor_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_LightSensor_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??readsensor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    readsensor
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_guangdian_ad?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_guangdian_ad
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_4channel_ad?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_4channel_ad
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_rentihongwai?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_rentihongwai
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_wendu_shidu?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_wendu_shidu
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??set_relay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    set_relay
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     get_4channel_ad          2      0      0
+       -> get_adc4ch          4      0      0
+     get_guangdian_ad         2      0      0
+       -> get_adc             4      0      0
+     get_rentihongwai         0      0      0
+     get_wendu_shidu          0      0     14
+       -> call_sht11          0      0     28
+     hal_LightSensor_Init     0      0      0
+     readsensor               0      0     13
+       -> BMA_Pooling         0      0     26
+       -> ITG_Pooling         0      0     26
+       -> get_adc4ch          0      0     22
+       -> get_adc             0      0     22
+     set_relay                0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     _A_P0                           1
+     P0INP                           1
+     _A_P2                           1
+     APCFG                           1
+     P0SEL                           1
+     P0DIR                           1
+     hal_LightSensor_Init           15
+     readsensor                    138
+     ?Subroutine1                   10
+     get_guangdian_ad                7
+     ?Subroutine0                    7
+     get_4channel_ad                 9
+     get_rentihongwai               13
+     get_wendu_shidu                91
+     set_relay                      14
+     ??hal_LightSensor_Init?relay    6
+     ??readsensor?relay              6
+     ??get_guangdian_ad?relay        6
+     ??get_4channel_ad?relay         6
+     ??get_rentihongwai?relay        6
+     ??get_wendu_shidu?relay         6
+     ??set_relay?relay               6
+
+ 
+ 304 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   6 bytes in segment SFR_AN
+ 
+ 346 bytes of CODE memory
+   0 bytes of DATA memory (+ 6 bytes shared)
+
+Errors: none
+Warnings: 3

@@ -1,0 +1,611 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         14/Mar/2017  16:39:09 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\SENSOR_DRV\get_adc.c           #
+#    Command line       =  -f F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2 #
+#                          530DB\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x8888                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\SENSOR_DRV\get_adc.c -D        #
+#                          VER=2.3 -D ZIGBEEPRO -D NWK_AUTO_POLL -D           #
+#                          HOLD_AUTO_START -D BUILD_ALL_DEVICES -D REFLECTOR  #
+#                          -D NV_INIT -D xNV_RESTORE -D ZTOOL_P1 -D MT_TASK   #
+#                          -D DEVICE_LOGICAL_TYPE=01 -D LOG_TYPE=02 -D        #
+#                          xUART_SENSOR -D xLCD_SUPPORTED -D UART_LOOK -lC    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\ -lA     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\         #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\Obj\ -e       #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zst #
+#                          ack\Samples\SensorDemo\CC2530DB\ -I                #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\SOURCE\ -I         #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\MYAPP\ -I          #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\sensor_drv\ -I     #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\ZMAIN\TI2530 #
+#                          DB\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects #
+#                          \zstack\Samples\SensorDemo\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\MT\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\HAL\TARGET\CC2530EB\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\OSAL\MCU\CCSOC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I      #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\AF\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\STACK\NWK\ -I               #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SEC\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\SAPI\ -I             #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\STACK\SYS\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\ #
+#                          Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\ZDO\ -I              #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\ZMAC\F8W\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ì #
+#                          â3\Projects\zstack\Samples\SensorDemo\CC2530DB\..\ #
+#                          ..\..\..\..\COMPONENTS\ZMAC\ -I                    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\SERVICES\SADDR\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎ #
+#                          Îñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I    #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\INCLUDE\ -I F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶ #
+#                          þ\Ìâ3\Projects\zstack\Samples\SensorDemo\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\ -I                       #
+#                          F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\..\..\..\..\..\COMPON #
+#                          ENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\List\get_adc. #
+#                          lst                                                #
+#    Object file        =  F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack #
+#                          \Samples\SensorDemo\CC2530DB\Enddev2\Obj\get_adc.r #
+#                          51                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\Ã¿ÈÕÊµÑµ\3.13¹úÈü2015ÈÎÎñ¶þ\Ìâ3\Projects\zstack\Samples\SensorDemo\SENSOR_DRV\get_adc.c
+      1          /**************************************************************************************************
+      2            Filename:      sh10.c
+      3          
+      4            Description:    sh10 driver 
+      5                            
+      6          **************************************************************************************************/
+      7          
+      8          /******************************************************************************
+      9           * INCLUDES
+     10           */
+     11          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr APCFG
+   \                     APCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     12          #include "hal_defs.h"
+     13          #include "hal_types.h"
+     14          #include "get_adc.h"
+     15          
+     16          
+     17          /******************************************************************************
+     18           * GLOBAL VARIABLES
+     19           */
+     20          void hal_adc_Init(void);
+     21           uint16 readVoltage(void);
+     22          //static volatile uint32 value;
+     23          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void hal_adc_Init(void)
+   \                     hal_adc_Init:
+     25          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     26          	    APCFG  |=1;   
+   \   000000   43F201       ORL     0xf2,#0x1
+     27                  P0SEL  |= (1 << (0));	
+   \   000003   43F301       ORL     0xf3,#0x1
+     28                  P0DIR  &= ~(1 << (0));	
+   \   000006   53FDFE       ANL     0xfd,#0xfe
+     29              
+     30          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE APCFG
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+     31          /******************************************************************************
+     32           * Ãû³Æ       get_adc
+     33           * ¹¦ÄÜ       ¶ÁÈ¡A/DÖµ
+     34           * Èë¿Ú²ÎÊý   ÎÞ
+     35           * ³ö¿Ú²ÎÊý   16Î»µçÑ¹Öµ£¬·Ö±æÂÊÎª10mV, Èç0x0102±íÊ¾2.58V
+     36           *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     37          uint16 get_adc(void)
+   \                     get_adc:
+     38          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+     39             int32 value;
+     40             hal_adc_Init(); // ADC³õÊ¼»¯
+   \   000005                ; Setup parameters for call to function hal_adc_Init
+   \   000005   12....       LCALL   ??hal_adc_Init?relay
+     41             ADCIF = 0;   //ÇåADC ÖÐ¶Ï±êÖ¾
+   \   000008   C28D         CLR     0x88.5
+     42             //²ÉÓÃ»ù×¼µçÑ¹avdd5:3.3V£¬Í¨µÀ0£¬Æô¶¯AD×ª»¯
+     43             ADCCON3 = (0x80 | 0x10 | 0x00);
+   \   00000A   75B690       MOV     0xb6,#-0x70
+     44             while ( !ADCIF )
+   \                     ??get_adc_0:
+   \   00000D   A28D         MOV     C,0x88.5
+   \   00000F   50FC         JNC     ??get_adc_0
+     45             {
+     46                 ;  //µÈ´ýAD×ª»¯½áÊø
+     47             }
+     48             value = ADCH;
+   \   000011   E5BB         MOV     A,0xbb
+   \   000013   F5..         MOV     ?V0 + 4,A
+     49             value = value<< 8;
+     50             value |= ADCL;
+   \   000015   E4           CLR     A
+   \   000016   F5..         MOV     ?V0 + 5,A
+   \   000018   F5..         MOV     ?V0 + 6,A
+   \   00001A   F5..         MOV     ?V0 + 7,A
+   \   00001C   7408         MOV     A,#0x8
+   \   00001E   78..         MOV     R0,#?V0 + 4
+   \   000020   12....       LCALL   ?L_SHL
+   \   000023   85BA..       MOV     ?V0 + 0,0xba
+   \   000026   F5..         MOV     ?V0 + 1,A
+   \   000028   F5..         MOV     ?V0 + 2,A
+   \   00002A   F5..         MOV     ?V0 + 3,A
+   \   00002C   78..         MOV     R0,#?V0 + 4
+   \   00002E   79..         MOV     R1,#?V0 + 0
+   \   000030   12....       LCALL   ?L_IOR
+     51             if(value&0x8000)
+   \   000033   85....       MOV     ?V0 + 1,?V0 + 5
+   \   000036   E5..         MOV     A,?V0 + 1
+   \   000038   5480         ANL     A,#0x80
+   \   00003A   6008         JZ      ??get_adc_1
+     52                 value=0;
+   \   00003C   90....       MOV     DPTR,#__Constant_0
+   \   00003F   78..         MOV     R0,#?V0 + 4
+   \   000041   12....       LCALL   ?L_MOV_X
+     53            // ADÖµ×ª»¯³ÉµçÑ¹Öµ
+     54            // 0 ±íÊ¾ 0V £¬32768 ±íÊ¾ 3.3V
+     55            // µçÑ¹Öµ = (value*3.3)/32768 £¨V)
+     56            value = (value * 330);
+     57            value = value >> 15;   // ³ýÒÔ32768
+     58            // ·µ»Ø·Ö±æÂÊÎª0.01VµÄµçÑ¹Öµ
+     59            return (uint16)value;
+   \                     ??get_adc_1:
+   \   000044   90....       MOV     DPTR,#__Constant_14a
+   \   000047   78..         MOV     R0,#?V0 + 0
+   \   000049   12....       LCALL   ?L_MOV_X
+   \   00004C   78..         MOV     R0,#?V0 + 4
+   \   00004E   79..         MOV     R1,#?V0 + 0
+   \   000050   12....       LCALL   ?L_MUL
+   \   000053   740F         MOV     A,#0xf
+   \   000055   78..         MOV     R0,#?V0 + 4
+   \   000057   12....       LCALL   ?SL_SHR
+   \   00005A                REQUIRE ?Subroutine0
+   \   00005A                REQUIRE _A_TCON
+   \   00005A                REQUIRE ADCCON3
+   \   00005A                REQUIRE ADCH
+   \   00005A                REQUIRE ADCL
+   \   00005A                ; // Fall through to label ?Subroutine0
+     60          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   AA..         MOV     R2,?V0 + 4
+   \   000002   AB..         MOV     R3,?V0 + 5
+   \   000004   7F08         MOV     R7,#0x8
+   \   000006   02....       LJMP    ?BANKED_LEAVE_XDATA
+     61          #define ACH1    0
+     62          #define ACH2    4
+     63          #define ACH3    5
+     64          #define ACH4    6
+     65          
+     66          void hal_adc4_Init(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     67          void hal_adc4_Init(void)
+   \                     hal_adc4_Init:
+     68          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     69          	    APCFG  |= (1 << ACH1) | (1 << ACH2)| (1 << ACH3)| (1 << ACH4);   
+   \   000000   43F271       ORL     0xf2,#0x71
+     70                  P0SEL  |= (1 << ACH1) | (1 << ACH2)| (1 << ACH3)| (1 << ACH4);	
+   \   000003   43F371       ORL     0xf3,#0x71
+     71                  P0DIR  &= ~((1 << ACH1) | (1 << ACH2)| (1 << ACH3)| (1 << ACH4));	
+   \   000006   53FD8E       ANL     0xfd,#0x8e
+     72              
+     73          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE APCFG
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+     74          #define AD4MA 32768*150*4/3300
+     75          #define AD20MA 32768*150*20/3300
+     76          //return 10ADÖµ£¬0---0v, 3ff---3.3v
+     77          uint16 adC_ch(uint8 ch);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          uint16 adC_ch(uint8 ch)
+   \                     adC_ch:
+     79          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FC           MOV     R4,A
+     80              int32 value;
+     81              ADCIF = 0;   //ÇåADC ÖÐ¶Ï±êÖ¾
+   \   000007   C28D         CLR     0x88.5
+     82             //²ÉÓÃ»ù×¼µçÑ¹avdd5:3.3V£¬Í¨µÀch£¬Æô¶¯AD×ª»¯
+     83             ADCCON3 = (0x80 | 0x10 | (ch&0x0f) );
+   \   000009   740F         MOV     A,#0xf
+   \   00000B   5C           ANL     A,R4
+   \   00000C   4490         ORL     A,#0x90
+   \   00000E   F5B6         MOV     0xb6,A
+     84             while ( !ADCIF )
+   \                     ??adC_ch_0:
+   \   000010   A28D         MOV     C,0x88.5
+   \   000012   50FC         JNC     ??adC_ch_0
+     85             {
+     86                 ;  //µÈ´ýAD×ª»¯½áÊø
+     87             }
+     88             value = ADCH;
+   \   000014   E5BB         MOV     A,0xbb
+   \   000016   F5..         MOV     ?V0 + 4,A
+     89             value = value<< 8;
+     90             value |= ADCL;
+   \   000018   E4           CLR     A
+   \   000019   F5..         MOV     ?V0 + 5,A
+   \   00001B   F5..         MOV     ?V0 + 6,A
+   \   00001D   F5..         MOV     ?V0 + 7,A
+   \   00001F   7408         MOV     A,#0x8
+   \   000021   78..         MOV     R0,#?V0 + 4
+   \   000023   12....       LCALL   ?L_SHL
+   \   000026   85BA..       MOV     ?V0 + 0,0xba
+   \   000029   F5..         MOV     ?V0 + 1,A
+   \   00002B   F5..         MOV     ?V0 + 2,A
+   \   00002D   F5..         MOV     ?V0 + 3,A
+   \   00002F   78..         MOV     R0,#?V0 + 4
+   \   000031   79..         MOV     R1,#?V0 + 0
+   \   000033   12....       LCALL   ?L_IOR
+     91             if(value&0x8000)
+   \   000036   85....       MOV     ?V0 + 1,?V0 + 5
+   \   000039   E5..         MOV     A,?V0 + 1
+   \   00003B   5480         ANL     A,#0x80
+   \   00003D   6008         JZ      ??adC_ch_1
+     92                 value=0;
+   \   00003F   90....       MOV     DPTR,#__Constant_0
+   \   000042   78..         MOV     R0,#?V0 + 4
+   \   000044   12....       LCALL   ?L_MOV_X
+     93             value= value>>5;
+     94             return (uint16)value;
+   \                     ??adC_ch_1:
+   \   000047   7405         MOV     A,#0x5
+   \   000049   78..         MOV     R0,#?V0 + 4
+   \   00004B   12....       LCALL   ?US_SHR
+   \   00004E   80..         SJMP    ?Subroutine0
+   \   000050                REQUIRE _A_TCON
+   \   000050                REQUIRE ADCCON3
+   \   000050                REQUIRE ADCH
+   \   000050                REQUIRE ADCL
+     95             /*
+     96            // ADÖµ×ª»¯³ÉµçÑ¹Öµ
+     97            // 0 ±íÊ¾ 0V £¬32768 ±íÊ¾ 3.3V
+     98            // µçÁ÷ 0--4ma, 255--20ma, µç×è150r
+     99            value = (value - AD4MA)*255/(AD20MA - AD4MA);
+    100            if(value<0)
+    101                return    0;
+    102            if(value>255)
+    103                return    255;
+    104            return    (uint8)value&0xff;*/
+    105          }
+    106          /******************************************************************************
+    107           * Ãû³Æ       get_adc4
+    108           * ¹¦ÄÜ       ¶ÁÈ¡ËÄÍ¨µÀA/DÖµ ch0 ch4 ch5 ch6 
+    109           * Èë¿Ú²ÎÊý   ÎÞ
+    110           * ³ö¿Ú²ÎÊý   
+    111           *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    112          void get_adc4ch(uint8 *buf)
+   \                     get_adc4ch:
+    113          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    114             uint16 value;
+    115             hal_adc4_Init(); // ADC³õÊ¼»¯
+   \   000009                ; Setup parameters for call to function hal_adc4_Init
+   \   000009   12....       LCALL   ??hal_adc4_Init?relay
+    116             value=adC_ch(ACH1);
+   \   00000C                ; Setup parameters for call to function adC_ch
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ?Subroutine2 & 0xFFFF
+    117             *buf=value;
+    118             buf++;
+    119             *buf=value>>8;
+    120             buf++;
+   \                     ??CrossCallReturnLabel_2:
+   \   000011   A3           INC     DPTR
+   \   000012   AE82         MOV     R6,DPL
+   \   000014   AF83         MOV     R7,DPH
+    121             value=adC_ch(ACH2);
+   \   000016                ; Setup parameters for call to function adC_ch
+   \   000016   7904         MOV     R1,#0x4
+   \   000018   12....       LCALL   ?Subroutine1 & 0xFFFF
+    122             *buf=value;
+    123             buf++;
+    124             *buf=value>>8;
+    125             buf++;
+    126             value=adC_ch(ACH3);
+   \                     ??CrossCallReturnLabel_0:
+   \   00001B                ; Setup parameters for call to function adC_ch
+   \   00001B   7905         MOV     R1,#0x5
+   \   00001D   12....       LCALL   ?Subroutine1 & 0xFFFF
+    127             *buf=value;
+    128             buf++;
+    129             *buf=value>>8;
+    130             buf++;
+    131             value=adC_ch(ACH4);
+   \                     ??CrossCallReturnLabel_1:
+   \   000020                ; Setup parameters for call to function adC_ch
+   \   000020   7906         MOV     R1,#0x6
+   \   000022   12....       LCALL   ?Subroutine2 & 0xFFFF
+    132             *buf=value;
+    133             buf++;
+    134             *buf=value>>8;
+    135          }
+   \                     ??CrossCallReturnLabel_3:
+   \   000025   7F02         MOV     R7,#0x2
+   \   000027   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??adC_ch?relay
+   \   000003   EA           MOV     A,R2
+   \   000004   8E82         MOV     DPL,R6
+   \   000006   8F83         MOV     DPH,R7
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   EB           MOV     A,R3
+   \   00000B   F0           MOVX    @DPTR,A
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000003   A3           INC     DPTR
+   \   000004   0E           INC     R6
+   \   000005   0E           INC     R6
+   \   000006   AF83         MOV     R7,DPH
+   \   000008   22           RET
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_14a:
+   \   000000   4A010000     DD 330
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_adc_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_adc_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_adc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_adc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_adc4_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_adc4_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??adC_ch?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    adC_ch
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_adc4ch?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_adc4ch
+    136          
+    137          
+    138          
+    139          
+    140          
+    141          
+    142          
+    143          
+    144          
+    145          
+    146          
+    147          
+    148          
+    149          
+    150          
+    151          
+    152          
+    153          
+    154          
+    155          
+    156          
+    157          
+    158          
+    159          
+    160          
+
+   Maximum stack usage in bytes:
+
+     Function           ISTACK PSTACK XSTACK
+     --------           ------ ------ ------
+     adC_ch                 0      0     26
+     get_adc                0      0     16
+       -> hal_adc_Init      0      0     32
+     get_adc4ch             1      0     10
+       -> hal_adc4_Init     0      0     20
+       -> adC_ch            0      0     20
+       -> adC_ch            0      0     20
+       -> adC_ch            0      0     20
+       -> adC_ch            0      0     20
+     hal_adc4_Init          0      0     10
+     hal_adc_Init           0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_TCON                  1
+     ADCCON3                  1
+     ADCL                     1
+     ADCH                     1
+     APCFG                    1
+     P0SEL                    1
+     P0DIR                    1
+     hal_adc_Init            12
+     get_adc                 90
+     ?Subroutine0             9
+     hal_adc4_Init           12
+     adC_ch                  80
+     get_adc4ch              42
+     ?Subroutine2             4
+     ?Subroutine3            13
+     ?Subroutine1             9
+     __Constant_0             4
+     __Constant_14a           4
+     ??hal_adc_Init?relay     6
+     ??get_adc?relay          6
+     ??hal_adc4_Init?relay    6
+     ??adC_ch?relay           6
+     ??get_adc4ch?relay       6
+
+ 
+ 271 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   7 bytes in segment SFR_AN
+   8 bytes in segment XDATA_ROM_C
+ 
+ 301 bytes of CODE  memory
+   0 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 7 bytes shared)
+
+Errors: none
+Warnings: none
