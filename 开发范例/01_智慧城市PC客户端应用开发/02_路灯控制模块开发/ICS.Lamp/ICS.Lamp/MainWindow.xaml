@@ -1,0 +1,13 @@
+﻿<Window x:Class="ICS.Lamp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICS.Lamp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="btnStreetLamp" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="25" Content="开关路灯" Margin="99,147,298,147" Click="btnStreetLamp_Click" ></Button>
+        <Button x:Name="btnCorridorLamp" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="25" Content="开关楼道灯" Margin="288,147,109,147" Click="btnCorridorLamp_Click"></Button>
+    </Grid>
+</Window>
