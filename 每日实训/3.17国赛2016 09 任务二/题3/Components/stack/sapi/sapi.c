@@ -795,9 +795,17 @@ UINT16 SAPI_ProcessEvent( byte task_id, UINT16 events )
           if(Buf[0] == 'X')
           {
             if(Buf[1] == 0x01)  //≈–∂œ…œŒªª˙√¸¡Ó
+            {
               set_relay(1);
+              P1_3 = 1;
+            }
+              
             if(Buf[1] == 0x00)
+            {
               set_relay(0);
+              P1_3 = 0;
+            }
+              
           }
           /* user code end */
           break;
